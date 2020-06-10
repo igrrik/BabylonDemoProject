@@ -7,50 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		903B65F0249185DC00E705EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B65EF249185DC00E705EA /* AppDelegate.swift */; };
-		903B65F2249185DC00E705EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B65F1249185DC00E705EA /* SceneDelegate.swift */; };
-		903B65F4249185DC00E705EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B65F3249185DC00E705EA /* ViewController.swift */; };
-		903B65F7249185DC00E705EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903B65F5249185DC00E705EA /* Main.storyboard */; };
-		903B65FA249185DC00E705EA /* BabylonDemoProject.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 903B65F8249185DC00E705EA /* BabylonDemoProject.xcdatamodeld */; };
-		903B65FC249185DC00E705EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 903B65FB249185DC00E705EA /* Assets.xcassets */; };
-		903B65FF249185DD00E705EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 903B65FD249185DD00E705EA /* LaunchScreen.storyboard */; };
-		903B660A249185DD00E705EA /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B6609249185DD00E705EA /* BabylonDemoProjectTests.swift */; };
+		90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFB24918D5D005668A7 /* AppDelegate.swift */; };
+		90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */; };
+		90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFF24918D5D005668A7 /* ViewController.swift */; };
+		90A5CF0324918D5D005668A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0124918D5D005668A7 /* Main.storyboard */; };
+		90A5CF0524918D5E005668A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0424918D5E005668A7 /* Assets.xcassets */; };
+		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
+		90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		903B6606249185DD00E705EA /* PBXContainerItemProxy */ = {
+		90A5CF0F24918D5E005668A7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 903B65E4249185DB00E705EA /* Project object */;
+			containerPortal = 90A5CEF024918D5D005668A7 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 903B65EB249185DB00E705EA;
+			remoteGlobalIDString = 90A5CEF724918D5D005668A7;
 			remoteInfo = BabylonDemoProject;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		903B65EC249185DC00E705EA /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		903B65EF249185DC00E705EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		903B65F1249185DC00E705EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		903B65F3249185DC00E705EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		903B65F6249185DC00E705EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		903B65F9249185DC00E705EA /* BabylonDemoProject.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BabylonDemoProject.xcdatamodel; sourceTree = "<group>"; };
-		903B65FB249185DC00E705EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		903B65FE249185DD00E705EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		903B6600249185DD00E705EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		903B6605249185DD00E705EA /* BabylonDemoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		903B6609249185DD00E705EA /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
-		903B660B249185DD00E705EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A5CEFB24918D5D005668A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		90A5CEFF24918D5D005668A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90A5CF0224918D5D005668A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		90A5CF0424918D5E005668A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		90A5CF0724918D5E005668A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		90A5CF0924918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90A5CF0E24918D5E005668A7 /* BabylonDemoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
+		90A5CF1424918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		903B65E9249185DB00E705EA /* Frameworks */ = {
+		90A5CEF524918D5D005668A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		903B6602249185DD00E705EA /* Frameworks */ = {
+		90A5CF0B24918D5E005668A7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,44 +58,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		903B65E3249185DB00E705EA = {
+		90A5CEEF24918D5D005668A7 = {
 			isa = PBXGroup;
 			children = (
-				903B65EE249185DC00E705EA /* BabylonDemoProject */,
-				903B6608249185DD00E705EA /* BabylonDemoProjectTests */,
-				903B65ED249185DC00E705EA /* Products */,
+				90A5CEFA24918D5D005668A7 /* BabylonDemoProject */,
+				90A5CF1124918D5E005668A7 /* BabylonDemoProjectTests */,
+				90A5CEF924918D5D005668A7 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		903B65ED249185DC00E705EA /* Products */ = {
+		90A5CEF924918D5D005668A7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				903B65EC249185DC00E705EA /* BabylonDemoProject.app */,
-				903B6605249185DD00E705EA /* BabylonDemoProjectTests.xctest */,
+				90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */,
+				90A5CF0E24918D5E005668A7 /* BabylonDemoProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		903B65EE249185DC00E705EA /* BabylonDemoProject */ = {
+		90A5CEFA24918D5D005668A7 /* BabylonDemoProject */ = {
 			isa = PBXGroup;
 			children = (
-				903B65EF249185DC00E705EA /* AppDelegate.swift */,
-				903B65F1249185DC00E705EA /* SceneDelegate.swift */,
-				903B65F3249185DC00E705EA /* ViewController.swift */,
-				903B65F5249185DC00E705EA /* Main.storyboard */,
-				903B65FB249185DC00E705EA /* Assets.xcassets */,
-				903B65FD249185DD00E705EA /* LaunchScreen.storyboard */,
-				903B6600249185DD00E705EA /* Info.plist */,
-				903B65F8249185DC00E705EA /* BabylonDemoProject.xcdatamodeld */,
+				90A5CEFB24918D5D005668A7 /* AppDelegate.swift */,
+				90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */,
+				90A5CEFF24918D5D005668A7 /* ViewController.swift */,
+				90A5CF0124918D5D005668A7 /* Main.storyboard */,
+				90A5CF0424918D5E005668A7 /* Assets.xcassets */,
+				90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */,
+				90A5CF0924918D5E005668A7 /* Info.plist */,
 			);
 			path = BabylonDemoProject;
 			sourceTree = "<group>";
 		};
-		903B6608249185DD00E705EA /* BabylonDemoProjectTests */ = {
+		90A5CF1124918D5E005668A7 /* BabylonDemoProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				903B6609249185DD00E705EA /* BabylonDemoProjectTests.swift */,
-				903B660B249185DD00E705EA /* Info.plist */,
+				90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */,
+				90A5CF1424918D5E005668A7 /* Info.plist */,
 			);
 			path = BabylonDemoProjectTests;
 			sourceTree = "<group>";
@@ -105,61 +102,64 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		903B65EB249185DB00E705EA /* BabylonDemoProject */ = {
+		90A5CEF724918D5D005668A7 /* BabylonDemoProject */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 903B660E249185DD00E705EA /* Build configuration list for PBXNativeTarget "BabylonDemoProject" */;
+			buildConfigurationList = 90A5CF1724918D5E005668A7 /* Build configuration list for PBXNativeTarget "BabylonDemoProject" */;
 			buildPhases = (
-				903B65E8249185DB00E705EA /* Sources */,
-				903B65E9249185DB00E705EA /* Frameworks */,
-				903B65EA249185DB00E705EA /* Resources */,
+				90A5CF232491911A005668A7 /* Swiftlint */,
+				90A5CEF424918D5D005668A7 /* Sources */,
+				90A5CEF524918D5D005668A7 /* Frameworks */,
+				90A5CEF624918D5D005668A7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = BabylonDemoProject;
+			packageProductDependencies = (
+			);
 			productName = BabylonDemoProject;
-			productReference = 903B65EC249185DC00E705EA /* BabylonDemoProject.app */;
+			productReference = 90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		903B6604249185DD00E705EA /* BabylonDemoProjectTests */ = {
+		90A5CF0D24918D5E005668A7 /* BabylonDemoProjectTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 903B6611249185DD00E705EA /* Build configuration list for PBXNativeTarget "BabylonDemoProjectTests" */;
+			buildConfigurationList = 90A5CF1A24918D5E005668A7 /* Build configuration list for PBXNativeTarget "BabylonDemoProjectTests" */;
 			buildPhases = (
-				903B6601249185DD00E705EA /* Sources */,
-				903B6602249185DD00E705EA /* Frameworks */,
-				903B6603249185DD00E705EA /* Resources */,
+				90A5CF0A24918D5E005668A7 /* Sources */,
+				90A5CF0B24918D5E005668A7 /* Frameworks */,
+				90A5CF0C24918D5E005668A7 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				903B6607249185DD00E705EA /* PBXTargetDependency */,
+				90A5CF1024918D5E005668A7 /* PBXTargetDependency */,
 			);
 			name = BabylonDemoProjectTests;
 			productName = BabylonDemoProjectTests;
-			productReference = 903B6605249185DD00E705EA /* BabylonDemoProjectTests.xctest */;
+			productReference = 90A5CF0E24918D5E005668A7 /* BabylonDemoProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		903B65E4249185DB00E705EA /* Project object */ = {
+		90A5CEF024918D5D005668A7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1130;
-				LastUpgradeCheck = 1130;
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = "Igor Kokoev";
 				TargetAttributes = {
-					903B65EB249185DB00E705EA = {
-						CreatedOnToolsVersion = 11.3.1;
+					90A5CEF724918D5D005668A7 = {
+						CreatedOnToolsVersion = 11.5;
 					};
-					903B6604249185DD00E705EA = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 903B65EB249185DB00E705EA;
+					90A5CF0D24918D5E005668A7 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 90A5CEF724918D5D005668A7;
 					};
 				};
 			};
-			buildConfigurationList = 903B65E7249185DB00E705EA /* Build configuration list for PBXProject "BabylonDemoProject" */;
+			buildConfigurationList = 90A5CEF324918D5D005668A7 /* Build configuration list for PBXProject "BabylonDemoProject" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -167,29 +167,31 @@
 				en,
 				Base,
 			);
-			mainGroup = 903B65E3249185DB00E705EA;
-			productRefGroup = 903B65ED249185DC00E705EA /* Products */;
+			mainGroup = 90A5CEEF24918D5D005668A7;
+			packageReferences = (
+			);
+			productRefGroup = 90A5CEF924918D5D005668A7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				903B65EB249185DB00E705EA /* BabylonDemoProject */,
-				903B6604249185DD00E705EA /* BabylonDemoProjectTests */,
+				90A5CEF724918D5D005668A7 /* BabylonDemoProject */,
+				90A5CF0D24918D5E005668A7 /* BabylonDemoProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		903B65EA249185DB00E705EA /* Resources */ = {
+		90A5CEF624918D5D005668A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903B65FF249185DD00E705EA /* LaunchScreen.storyboard in Resources */,
-				903B65FC249185DC00E705EA /* Assets.xcassets in Resources */,
-				903B65F7249185DC00E705EA /* Main.storyboard in Resources */,
+				90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */,
+				90A5CF0524918D5E005668A7 /* Assets.xcassets in Resources */,
+				90A5CF0324918D5D005668A7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		903B6603249185DD00E705EA /* Resources */ = {
+		90A5CF0C24918D5E005668A7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -198,49 +200,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90A5CF232491911A005668A7 /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint autocorrect\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		903B65E8249185DB00E705EA /* Sources */ = {
+		90A5CEF424918D5D005668A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903B65F4249185DC00E705EA /* ViewController.swift in Sources */,
-				903B65F0249185DC00E705EA /* AppDelegate.swift in Sources */,
-				903B65FA249185DC00E705EA /* BabylonDemoProject.xcdatamodeld in Sources */,
-				903B65F2249185DC00E705EA /* SceneDelegate.swift in Sources */,
+				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
+				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
+				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		903B6601249185DD00E705EA /* Sources */ = {
+		90A5CF0A24918D5E005668A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				903B660A249185DD00E705EA /* BabylonDemoProjectTests.swift in Sources */,
+				90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		903B6607249185DD00E705EA /* PBXTargetDependency */ = {
+		90A5CF1024918D5E005668A7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 903B65EB249185DB00E705EA /* BabylonDemoProject */;
-			targetProxy = 903B6606249185DD00E705EA /* PBXContainerItemProxy */;
+			target = 90A5CEF724918D5D005668A7 /* BabylonDemoProject */;
+			targetProxy = 90A5CF0F24918D5E005668A7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		903B65F5249185DC00E705EA /* Main.storyboard */ = {
+		90A5CF0124918D5D005668A7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				903B65F6249185DC00E705EA /* Base */,
+				90A5CF0224918D5D005668A7 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		903B65FD249185DD00E705EA /* LaunchScreen.storyboard */ = {
+		90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				903B65FE249185DD00E705EA /* Base */,
+				90A5CF0724918D5E005668A7 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -248,7 +270,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		903B660C249185DD00E705EA /* Debug */ = {
+		90A5CF1524918D5E005668A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -298,7 +320,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -308,7 +330,7 @@
 			};
 			name = Debug;
 		};
-		903B660D249185DD00E705EA /* Release */ = {
+		90A5CF1624918D5E005668A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -352,7 +374,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -362,7 +384,7 @@
 			};
 			name = Release;
 		};
-		903B660F249185DD00E705EA /* Debug */ = {
+		90A5CF1824918D5E005668A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -380,7 +402,7 @@
 			};
 			name = Debug;
 		};
-		903B6610249185DD00E705EA /* Release */ = {
+		90A5CF1924918D5E005668A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -398,7 +420,7 @@
 			};
 			name = Release;
 		};
-		903B6612249185DD00E705EA /* Debug */ = {
+		90A5CF1B24918D5E005668A7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -406,7 +428,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W9U2X842Z;
 				INFOPLIST_FILE = BabylonDemoProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -420,7 +442,7 @@
 			};
 			name = Debug;
 		};
-		903B6613249185DD00E705EA /* Release */ = {
+		90A5CF1C24918D5E005668A7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -428,7 +450,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W9U2X842Z;
 				INFOPLIST_FILE = BabylonDemoProjectTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,47 +467,34 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		903B65E7249185DB00E705EA /* Build configuration list for PBXProject "BabylonDemoProject" */ = {
+		90A5CEF324918D5D005668A7 /* Build configuration list for PBXProject "BabylonDemoProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				903B660C249185DD00E705EA /* Debug */,
-				903B660D249185DD00E705EA /* Release */,
+				90A5CF1524918D5E005668A7 /* Debug */,
+				90A5CF1624918D5E005668A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		903B660E249185DD00E705EA /* Build configuration list for PBXNativeTarget "BabylonDemoProject" */ = {
+		90A5CF1724918D5E005668A7 /* Build configuration list for PBXNativeTarget "BabylonDemoProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				903B660F249185DD00E705EA /* Debug */,
-				903B6610249185DD00E705EA /* Release */,
+				90A5CF1824918D5E005668A7 /* Debug */,
+				90A5CF1924918D5E005668A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		903B6611249185DD00E705EA /* Build configuration list for PBXNativeTarget "BabylonDemoProjectTests" */ = {
+		90A5CF1A24918D5E005668A7 /* Build configuration list for PBXNativeTarget "BabylonDemoProjectTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				903B6612249185DD00E705EA /* Debug */,
-				903B6613249185DD00E705EA /* Release */,
+				90A5CF1B24918D5E005668A7 /* Debug */,
+				90A5CF1C24918D5E005668A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		903B65F8249185DC00E705EA /* BabylonDemoProject.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				903B65F9249185DC00E705EA /* BabylonDemoProject.xcdatamodel */,
-			);
-			currentVersion = 903B65F9249185DC00E705EA /* BabylonDemoProject.xcdatamodel */;
-			path = BabylonDemoProject.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
-	rootObject = 903B65E4249185DB00E705EA /* Project object */;
+	rootObject = 90A5CEF024918D5D005668A7 /* Project object */;
 }
