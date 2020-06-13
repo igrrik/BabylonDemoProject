@@ -9,8 +9,21 @@
 import UIKit
 
 final class ViewController: UIViewController {
+
+    @IBOutlet private weak var counterLabel: UILabel!
+    private var counter = 0
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        updateText()
+    }
+    @IBAction private func didTapHit(_ sender: Any) {
+        counter += 1
+        updateText()
+    }
+
+    func updateText() {
+        counterLabel.text = "\(counter)"
     }
 }

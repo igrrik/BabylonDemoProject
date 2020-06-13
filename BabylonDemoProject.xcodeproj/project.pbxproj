@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906829C124952FEF0051BE94 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C024952FEF0051BE94 /* APIClient.swift */; };
 		90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFB24918D5D005668A7 /* AppDelegate.swift */; };
 		90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */; };
 		90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFF24918D5D005668A7 /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		906829C024952FEF0051BE94 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5CEFB24918D5D005668A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		906829BC24952F830051BE94 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				906829C024952FEF0051BE94 /* APIClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		906829BD24952F8B0051BE94 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */,
+				90A5CEFB24918D5D005668A7 /* AppDelegate.swift */,
+				90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		906829BE24952F9C0051BE94 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				90A5CF0424918D5E005668A7 /* Assets.xcassets */,
+				90A5CF0924918D5E005668A7 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		906829BF24952FA60051BE94 /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				90A5CF0124918D5D005668A7 /* Main.storyboard */,
+				90A5CEFF24918D5D005668A7 /* ViewController.swift */,
+			);
+			path = Stories;
+			sourceTree = "<group>";
+		};
 		90A5CEEF24918D5D005668A7 = {
 			isa = PBXGroup;
 			children = (
@@ -79,13 +117,10 @@
 		90A5CEFA24918D5D005668A7 /* BabylonDemoProject */ = {
 			isa = PBXGroup;
 			children = (
-				90A5CEFB24918D5D005668A7 /* AppDelegate.swift */,
-				90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */,
-				90A5CEFF24918D5D005668A7 /* ViewController.swift */,
-				90A5CF0124918D5D005668A7 /* Main.storyboard */,
-				90A5CF0424918D5E005668A7 /* Assets.xcassets */,
-				90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */,
-				90A5CF0924918D5E005668A7 /* Info.plist */,
+				906829BD24952F8B0051BE94 /* Application */,
+				906829BC24952F830051BE94 /* API */,
+				906829BF24952FA60051BE94 /* Stories */,
+				906829BE24952F9C0051BE94 /* Resources */,
 			);
 			path = BabylonDemoProject;
 			sourceTree = "<group>";
@@ -229,6 +264,7 @@
 				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
 				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
 				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
+				906829C124952FEF0051BE94 /* APIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
