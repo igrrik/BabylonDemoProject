@@ -70,14 +70,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		906829BC24952F830051BE94 /* API */ = {
+		9066D50324963B12008A8A71 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				906829C024952FEF0051BE94 /* APIService.swift */,
 				90659A0F2496387400233C5A /* APIWorker.swift */,
 				90659A0D2496385A00233C5A /* APIRequest.swift */,
 				90659A0B2496384600233C5A /* APIEndpoint.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9066D50424963B1A008A8A71 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
 				906829C224962D3C0051BE94 /* ObtainAlbum.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		906829BC24952F830051BE94 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				9066D50324963B12008A8A71 /* Core */,
+				9066D50424963B1A008A8A71 /* Requests */,
 			);
 			path = API;
 			sourceTree = "<group>";

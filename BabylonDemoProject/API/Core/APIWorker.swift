@@ -26,7 +26,7 @@ final class APIWorker: APIService {
     }
 
     func send<T: APIRequest>(request: T) -> APIResponse<T> {
-        return Deferred<Future<T.Response, Error>> { [weak self] in
+        return APIResponse<T> { [weak self] in
             return Future<T.Response, Error> { promise in
                 guard let self = self else {
                     promise(.failure(ObjectDeallocatedError()))
