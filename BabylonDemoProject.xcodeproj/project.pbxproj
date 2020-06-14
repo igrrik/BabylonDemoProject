@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		906829C124952FEF0051BE94 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C024952FEF0051BE94 /* APIClient.swift */; };
+		90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0B2496384600233C5A /* APIEndpoint.swift */; };
+		90659A0E2496385A00233C5A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0D2496385A00233C5A /* APIRequest.swift */; };
+		90659A102496387400233C5A /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0F2496387400233C5A /* APIWorker.swift */; };
+		906829C124952FEF0051BE94 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C024952FEF0051BE94 /* APIService.swift */; };
+		906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C224962D3C0051BE94 /* ObtainAlbum.swift */; };
 		90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFB24918D5D005668A7 /* AppDelegate.swift */; };
 		90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */; };
 		90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFF24918D5D005668A7 /* ViewController.swift */; };
@@ -15,6 +19,7 @@
 		90A5CF0524918D5E005668A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0424918D5E005668A7 /* Assets.xcassets */; };
 		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
 		90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */; };
+		90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,7 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		906829C024952FEF0051BE94 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		90659A0B2496384600233C5A /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		90659A0D2496385A00233C5A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
+		90659A0F2496387400233C5A /* APIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorker.swift; sourceTree = "<group>"; };
+		906829C024952FEF0051BE94 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		906829C224962D3C0051BE94 /* ObtainAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainAlbum.swift; sourceTree = "<group>"; };
 		90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5CEFB24918D5D005668A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +49,7 @@
 		90A5CF0E24918D5E005668A7 /* BabylonDemoProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BabylonDemoProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
 		90A5CF1424918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDeallocatedError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +73,11 @@
 		906829BC24952F830051BE94 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				906829C024952FEF0051BE94 /* APIClient.swift */,
+				906829C024952FEF0051BE94 /* APIService.swift */,
+				90659A0F2496387400233C5A /* APIWorker.swift */,
+				90659A0D2496385A00233C5A /* APIRequest.swift */,
+				90659A0B2496384600233C5A /* APIEndpoint.swift */,
+				906829C224962D3C0051BE94 /* ObtainAlbum.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -119,8 +133,9 @@
 			children = (
 				906829BD24952F8B0051BE94 /* Application */,
 				906829BC24952F830051BE94 /* API */,
-				906829BF24952FA60051BE94 /* Stories */,
+				90DD5E7324963A0200696200 /* Common */,
 				906829BE24952F9C0051BE94 /* Resources */,
+				906829BF24952FA60051BE94 /* Stories */,
 			);
 			path = BabylonDemoProject;
 			sourceTree = "<group>";
@@ -132,6 +147,14 @@
 				90A5CF1424918D5E005668A7 /* Info.plist */,
 			);
 			path = BabylonDemoProjectTests;
+			sourceTree = "<group>";
+		};
+		90DD5E7324963A0200696200 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +285,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
+				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
+				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
 				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
 				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
-				906829C124952FEF0051BE94 /* APIClient.swift in Sources */,
+				90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */,
+				906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */,
+				90659A102496387400233C5A /* APIWorker.swift in Sources */,
+				906829C124952FEF0051BE94 /* APIService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +454,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W9U2X842Z;
-				INFOPLIST_FILE = BabylonDemoProject/Info.plist;
+				INFOPLIST_FILE = BabylonDemoProject/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9W9U2X842Z;
-				INFOPLIST_FILE = BabylonDemoProject/Info.plist;
+				INFOPLIST_FILE = BabylonDemoProject/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

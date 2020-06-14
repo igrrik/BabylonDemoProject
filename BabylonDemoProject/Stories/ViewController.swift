@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import Combine
 
 final class ViewController: UIViewController {
 
     @IBOutlet private weak var counterLabel: UILabel!
     private var counter = 0
+    private let apiClient = APIWorker()
+    private var subscribtions = Set<AnyCancellable>()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +24,15 @@ final class ViewController: UIViewController {
     @IBAction private func didTapHit(_ sender: Any) {
         counter += 1
         updateText()
+
+        apiClient
+            .send(request: ObtainAlbum(albumId: counter))
+            .sink(receiveCompletion: {
+                print($0)
+            }, receiveValue: {
+                print($0)
+            })
+            .store(in: &subscribtions)
     }
 
     func updateText() {
