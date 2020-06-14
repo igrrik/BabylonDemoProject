@@ -8,12 +8,7 @@
 
 import Foundation
 
-//struct ObtainPhotos: APIRequest {
-//    let endpoint: APIEndpoint = .photos
-//}
-//
-//extension ObtainPhotos {
-//    struct Response {
-//
-//    }
-//}
+struct ObtainPhotos: APIRequest {
+    typealias Response = [Photo]
+    let endpoint: APIEndpoint = .photos
+}

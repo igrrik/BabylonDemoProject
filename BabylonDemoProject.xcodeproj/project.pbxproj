@@ -25,6 +25,8 @@
 		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
 		90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */; };
 		90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */; };
+		D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E42496A358003282F6 /* ObtainUser.swift */; };
+		D9E445E72496A386003282F6 /* ObtainCommentsOfPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
 		90A5CF1424918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDeallocatedError.swift; sourceTree = "<group>"; };
+		D9E445E42496A358003282F6 /* ObtainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainUser.swift; sourceTree = "<group>"; };
+		D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainCommentsOfPhoto.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 			children = (
 				906829C224962D3C0051BE94 /* ObtainAlbum.swift */,
 				9066D50624964AE9008A8A71 /* ObtainPhotos.swift */,
+				D9E445E42496A358003282F6 /* ObtainUser.swift */,
+				D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -114,8 +120,8 @@
 		906829BC24952F830051BE94 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				9066D50824964B39008A8A71 /* Entities */,
 				9066D50324963B12008A8A71 /* Core */,
+				9066D50824964B39008A8A71 /* Entities */,
 				9066D50424963B1A008A8A71 /* Requests */,
 			);
 			path = API;
@@ -330,9 +336,11 @@
 				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
 				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
 				9066D50724964AE9008A8A71 /* ObtainPhotos.swift in Sources */,
+				D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */,
 				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
 				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
 				90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */,
+				D9E445E72496A386003282F6 /* ObtainCommentsOfPhoto.swift in Sources */,
 				906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */,
 				9066D50A24964B40008A8A71 /* Album.swift in Sources */,
 				90659A102496387400233C5A /* APIWorker.swift in Sources */,

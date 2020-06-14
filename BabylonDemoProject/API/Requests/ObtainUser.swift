@@ -1,5 +1,5 @@
 //
-//  ObtainAlbum.swift
+//  ObtainUser.swift
 //  BabylonDemoProject
 //
 //  Created by Igor Kokoev on 14.06.2020.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct ObtainAlbum: APIRequest {
-    typealias Response = Album
+struct ObtainUser: APIRequest {
+    typealias Response = User
     let endpoint: APIEndpoint
 
-    init(albumId: Int) {
-        endpoint = .album(identifier: albumId)
+    init(userId: Int) {
+        endpoint = .user(identifier: userId)
     }
 }
