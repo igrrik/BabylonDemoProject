@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,10 @@
 		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
 		90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */; };
 		90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */; };
+		D92B081C2496DC60000B97C3 /* LocalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B081B2496DC60000B97C3 /* LocalAPIService.swift */; };
+		D92B08202496DC85000B97C3 /* JSONs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92B081F2496DC85000B97C3 /* JSONs.xcassets */; };
 		D99712752496C43E00F4170E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99712742496C43E00F4170E /* PhotoCollectionViewCell.swift */; };
+		D99712782496D40000F4170E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D99712772496D40000F4170E /* Kingfisher */; };
 		D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E42496A358003282F6 /* ObtainUser.swift */; };
 		D9E445E72496A386003282F6 /* ObtainCommentsOfPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */; };
 		D9E445EA2496C1F2003282F6 /* PhotosListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E92496C1F2003282F6 /* PhotosListViewController.swift */; };
@@ -64,6 +67,8 @@
 		90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
 		90A5CF1424918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDeallocatedError.swift; sourceTree = "<group>"; };
+		D92B081B2496DC60000B97C3 /* LocalAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAPIService.swift; sourceTree = "<group>"; };
+		D92B081F2496DC85000B97C3 /* JSONs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = JSONs.xcassets; sourceTree = "<group>"; };
 		D99712742496C43E00F4170E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9E445E42496A358003282F6 /* ObtainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainUser.swift; sourceTree = "<group>"; };
 		D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainCommentsOfPhoto.swift; sourceTree = "<group>"; };
@@ -75,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D99712782496D40000F4170E /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				906829C024952FEF0051BE94 /* APIService.swift */,
+				D92B081B2496DC60000B97C3 /* LocalAPIService.swift */,
 				90659A0F2496387400233C5A /* APIWorker.swift */,
 				90659A0D2496385A00233C5A /* APIRequest.swift */,
 				90659A0B2496384600233C5A /* APIEndpoint.swift */,
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				90A5CF0424918D5E005668A7 /* Assets.xcassets */,
+				D92B081F2496DC85000B97C3 /* JSONs.xcassets */,
 				90A5CF0924918D5E005668A7 /* Info.plist */,
 			);
 			path = Resources;
@@ -234,6 +242,7 @@
 			);
 			name = BabylonDemoProject;
 			packageProductDependencies = (
+				D99712772496D40000F4170E /* Kingfisher */,
 			);
 			productName = BabylonDemoProject;
 			productReference = 90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */;
@@ -286,6 +295,7 @@
 			);
 			mainGroup = 90A5CEEF24918D5D005668A7;
 			packageReferences = (
+				D99712762496D40000F4170E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 90A5CEF924918D5D005668A7 /* Products */;
 			projectDirPath = "";
@@ -305,6 +315,7 @@
 				90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */,
 				90A5CF0524918D5E005668A7 /* Assets.xcassets in Resources */,
 				90A5CF0324918D5D005668A7 /* Main.storyboard in Resources */,
+				D92B08202496DC85000B97C3 /* JSONs.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,6 +359,7 @@
 				9066D50C24964B45008A8A71 /* Photo.swift in Sources */,
 				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
 				9066D51024965FA0008A8A71 /* Comment.swift in Sources */,
+				D92B081C2496DC60000B97C3 /* LocalAPIService.swift in Sources */,
 				D99712752496C43E00F4170E /* PhotoCollectionViewCell.swift in Sources */,
 				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
 				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
@@ -627,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D99712762496D40000F4170E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.14.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D99712772496D40000F4170E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D99712762496D40000F4170E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90A5CEF024918D5D005668A7 /* Project object */;
 }

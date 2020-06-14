@@ -7,17 +7,23 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var photoImageView: UIImageView?
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        photoImageView?.clipsToBounds = true
+    }
+
     func configure(with model: Model) {
-        contentView.backgroundColor = model.backgroundColor
+        photoImageView?.kf.setImage(with: model.imageURL)
     }
 }
 
 extension PhotoCollectionViewCell {
     struct Model {
-        let backgroundColor: UIColor
+        let imageURL: URL
     }
 }
