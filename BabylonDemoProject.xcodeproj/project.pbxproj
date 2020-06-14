@@ -10,6 +10,11 @@
 		90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0B2496384600233C5A /* APIEndpoint.swift */; };
 		90659A0E2496385A00233C5A /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0D2496385A00233C5A /* APIRequest.swift */; };
 		90659A102496387400233C5A /* APIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90659A0F2496387400233C5A /* APIWorker.swift */; };
+		9066D50724964AE9008A8A71 /* ObtainPhotos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9066D50624964AE9008A8A71 /* ObtainPhotos.swift */; };
+		9066D50A24964B40008A8A71 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9066D50924964B40008A8A71 /* Album.swift */; };
+		9066D50C24964B45008A8A71 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9066D50B24964B45008A8A71 /* Photo.swift */; };
+		9066D50E24964CAE008A8A71 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9066D50D24964CAE008A8A71 /* User.swift */; };
+		9066D51024965FA0008A8A71 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9066D50F24965FA0008A8A71 /* Comment.swift */; };
 		906829C124952FEF0051BE94 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C024952FEF0051BE94 /* APIService.swift */; };
 		906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C224962D3C0051BE94 /* ObtainAlbum.swift */; };
 		90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFB24918D5D005668A7 /* AppDelegate.swift */; };
@@ -36,6 +41,11 @@
 		90659A0B2496384600233C5A /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
 		90659A0D2496385A00233C5A /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		90659A0F2496387400233C5A /* APIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIWorker.swift; sourceTree = "<group>"; };
+		9066D50624964AE9008A8A71 /* ObtainPhotos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainPhotos.swift; sourceTree = "<group>"; };
+		9066D50924964B40008A8A71 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		9066D50B24964B45008A8A71 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9066D50D24964CAE008A8A71 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9066D50F24965FA0008A8A71 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		906829C024952FEF0051BE94 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		906829C224962D3C0051BE94 /* ObtainAlbum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainAlbum.swift; sourceTree = "<group>"; };
 		90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,13 +95,26 @@
 			isa = PBXGroup;
 			children = (
 				906829C224962D3C0051BE94 /* ObtainAlbum.swift */,
+				9066D50624964AE9008A8A71 /* ObtainPhotos.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		9066D50824964B39008A8A71 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				9066D50924964B40008A8A71 /* Album.swift */,
+				9066D50B24964B45008A8A71 /* Photo.swift */,
+				9066D50D24964CAE008A8A71 /* User.swift */,
+				9066D50F24965FA0008A8A71 /* Comment.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		906829BC24952F830051BE94 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				9066D50824964B39008A8A71 /* Entities */,
 				9066D50324963B12008A8A71 /* Core */,
 				9066D50424963B1A008A8A71 /* Requests */,
 			);
@@ -300,13 +323,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9066D50E24964CAE008A8A71 /* User.swift in Sources */,
+				9066D50C24964B45008A8A71 /* Photo.swift in Sources */,
 				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
+				9066D51024965FA0008A8A71 /* Comment.swift in Sources */,
 				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
 				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
+				9066D50724964AE9008A8A71 /* ObtainPhotos.swift in Sources */,
 				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
 				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
 				90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */,
 				906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */,
+				9066D50A24964B40008A8A71 /* Album.swift in Sources */,
 				90659A102496387400233C5A /* APIWorker.swift in Sources */,
 				906829C124952FEF0051BE94 /* APIService.swift in Sources */,
 			);

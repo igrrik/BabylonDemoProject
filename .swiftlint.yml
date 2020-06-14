@@ -55,8 +55,8 @@ identifier_name:
         warning: 40
         error: 60
     min_length:
-        warning: 3
-        error: 2
+        warning: 2
+        error: 1
 
 file_length:
     warning: 500
