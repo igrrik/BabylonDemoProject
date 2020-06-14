@@ -10,7 +10,6 @@ import Foundation
 import Combine
 
 protocol APIService {
-
     func send<T: APIRequest>(request: T) -> APIResponse<T>
 }
 

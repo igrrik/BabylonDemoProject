@@ -13,7 +13,7 @@ final class APIWorker: APIService {
     private let session: URLSession
     private let decoder: JSONDecoder
     private let delegateQueue: DispatchQueue
-    private var cancellableBag = Set<AnyCancellable>()
+    private var subscriptions = Set<AnyCancellable>()
 
     init(session: URLSession, decoder: JSONDecoder, delegateQueue: DispatchQueue) {
         self.session = session
@@ -56,7 +56,7 @@ final class APIWorker: APIService {
                     }, receiveValue: { response in
                         promise(.success(response))
                     })
-                    .store(in: &self.cancellableBag)
+                    .store(in: &self.subscriptions)
             }
         }
     }
