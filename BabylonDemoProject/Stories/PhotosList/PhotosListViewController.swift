@@ -10,58 +10,121 @@ import UIKit
 import Combine
 
 final class PhotosListViewController: UIViewController {
-    @IBOutlet private weak var collectionView: UICollectionView?
-    @IBOutlet private weak var loadingIndicator: UIActivityIndicatorView?
-
-    private var photos = [Photo]()
-    private var dataSource = [PhotoCollectionViewCell.Model]()
-    private let cellReuseId = "PhotoCell"
-    private let sectionInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
-    private let itemsPerRow: CGFloat = 3
-    private let service: APIService = LocalAPIService()
+    private let viewModel: PhotosListViewModel
+    private let collectionView = UICollectionView()
+    private let loadingIndicator = UIActivityIndicatorView()
+    private let collectionViewInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
     private var subscriptions = Set<AnyCancellable>()
+    private var dataSource = [PhotoCollectionViewCell.Model]() {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+
+    init(viewModel: PhotosListViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
+        bind(to: viewModel)
+        viewModel.loadPhotos()
+    }
+}
+
+extension PhotosListViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        dataSource.count
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        loadPhotos()
+    func collectionView(
+        _ collectionView: UICollectionView,
+        cellForItemAt indexPath: IndexPath
+    ) -> UICollectionViewCell {
+        let cell: PhotoCollectionViewCell = collectionView.dequeueReusableCell(for: indexPath)
+        let model = dataSource[indexPath.item]
+        cell.configure(with: model)
+        return cell
+    }
+}
+
+extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(
+        _ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAt indexPath: IndexPath
+    ) -> CGSize {
+        let itemsPerRow: CGFloat = 3
+        let paddingSpace = collectionViewInsets.left * (itemsPerRow + 1)
+        let availableWidth = collectionView.frame.width - paddingSpace
+        let widthPerItem = (availableWidth / itemsPerRow).rounded(.down)
+
+        return CGSize(width: widthPerItem, height: widthPerItem)
     }
 }
 
 private extension PhotosListViewController {
     func configureUI() {
-        collectionView?.dataSource = self
-        collectionView?.delegate = self
+        configureCollectionView()
+        configureLoadingIndicator()
+    }
 
-        if let flowLayout = collectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset = sectionInsets
+    func configureCollectionView() {
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(collectionView)
+        NSLayoutConstraint.activate([
+            collectionView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+        collectionView.registerCellOfType(PhotoCollectionViewCell.self)
+        collectionView.dataSource = self
+        collectionView.delegate = self
+
+        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.sectionInset = collectionViewInsets
         }
     }
 
-    func loadPhotos() {
-        loadingIndicator?.startAnimating()
-        service.send(request: ObtainPhotos())
-            .createPublisher()
-            .handleEvents(receiveOutput: { [weak self] photos in
-                self?.photos = photos
+    func configureLoadingIndicator() {
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+        ])
+    }
+
+    func bind(to viewModel: PhotosListViewModel) {
+        viewModel.error
+            .sink(receiveValue: { [weak self] error in
+                self?.show(error)
             })
+            .store(in: &subscriptions)
+
+        viewModel.isLoading
+            .sink(receiveValue: { [weak self] isLoading in
+                if isLoading {
+                    self?.loadingIndicator.startAnimating()
+                } else {
+                    self?.loadingIndicator.stopAnimating()
+                }
+            })
+            .store(in: &subscriptions)
+
+        viewModel.photos
             .map { $0.map(\.thumbnailUrl) }
             .map { $0.map(PhotoCollectionViewCell.Model.init(imageURL:)) }
-            .sink(receiveCompletion: { [weak self] completion in
-                self?.loadingIndicator?.stopAnimating()
-                guard case let .failure(error) = completion else {
-                    return
-                }
-                self?.show(error)
-            }, receiveValue: { [weak self] models in
-                self?.loadingIndicator?.stopAnimating()
-                self?.dataSource = models
-                self?.collectionView?.reloadData()
-            })
+            .assign(to: \.dataSource, on: self)
             .store(in: &subscriptions)
     }
 
@@ -74,37 +137,5 @@ private extension PhotosListViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         present(alert, animated: true)
-    }
-}
-
-extension PhotosListViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos.count
-    }
-
-    func collectionView(
-        _ collectionView: UICollectionView,
-        cellForItemAt indexPath: IndexPath
-    ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseId, for: indexPath)
-        if let photoCell = cell as? PhotoCollectionViewCell {
-            let model = dataSource[indexPath.item]
-            photoCell.configure(with: model)
-        }
-        return cell
-    }
-}
-
-extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(
-        _ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        sizeForItemAt indexPath: IndexPath
-    ) -> CGSize {
-        let paddingSpace = sectionInsets.left * (itemsPerRow + 1)
-        let availableWidth = collectionView.frame.width - paddingSpace
-        let widthPerItem = (availableWidth / itemsPerRow).rounded(.down)
-
-        return CGSize(width: widthPerItem, height: widthPerItem)
     }
 }

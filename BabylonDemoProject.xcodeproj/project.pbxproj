@@ -19,7 +19,6 @@
 		906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906829C224962D3C0051BE94 /* ObtainAlbum.swift */; };
 		90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFB24918D5D005668A7 /* AppDelegate.swift */; };
 		90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */; };
-		90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CEFF24918D5D005668A7 /* ViewController.swift */; };
 		90A5CF0324918D5D005668A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0124918D5D005668A7 /* Main.storyboard */; };
 		90A5CF0524918D5E005668A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0424918D5E005668A7 /* Assets.xcassets */; };
 		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
@@ -27,6 +26,10 @@
 		90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */; };
 		D92B081C2496DC60000B97C3 /* LocalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B081B2496DC60000B97C3 /* LocalAPIService.swift */; };
 		D92B08202496DC85000B97C3 /* JSONs.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D92B081F2496DC85000B97C3 /* JSONs.xcassets */; };
+		D99432F424981E7C003FC29C /* ApplicationModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99432F324981E7C003FC29C /* ApplicationModuleFactory.swift */; };
+		D99432F624982344003FC29C /* PhotosListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99432F524982344003FC29C /* PhotosListViewModel.swift */; };
+		D99432FA24983053003FC29C /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99432F924983053003FC29C /* Reusable.swift */; };
+		D99432FC2498306B003FC29C /* UICollectionView+CellRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99432FB2498306B003FC29C /* UICollectionView+CellRegistration.swift */; };
 		D99712752496C43E00F4170E /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D99712742496C43E00F4170E /* PhotoCollectionViewCell.swift */; };
 		D99712782496D40000F4170E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = D99712772496D40000F4170E /* Kingfisher */; };
 		D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E445E42496A358003282F6 /* ObtainUser.swift */; };
@@ -58,7 +61,6 @@
 		90A5CEF824918D5D005668A7 /* BabylonDemoProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BabylonDemoProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A5CEFB24918D5D005668A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		90A5CEFF24918D5D005668A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		90A5CF0224918D5D005668A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		90A5CF0424918D5E005668A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A5CF0724918D5E005668A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +71,10 @@
 		90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDeallocatedError.swift; sourceTree = "<group>"; };
 		D92B081B2496DC60000B97C3 /* LocalAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAPIService.swift; sourceTree = "<group>"; };
 		D92B081F2496DC85000B97C3 /* JSONs.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = JSONs.xcassets; sourceTree = "<group>"; };
+		D99432F324981E7C003FC29C /* ApplicationModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModuleFactory.swift; sourceTree = "<group>"; };
+		D99432F524982344003FC29C /* PhotosListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosListViewModel.swift; sourceTree = "<group>"; };
+		D99432F924983053003FC29C /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		D99432FB2498306B003FC29C /* UICollectionView+CellRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+CellRegistration.swift"; sourceTree = "<group>"; };
 		D99712742496C43E00F4170E /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		D9E445E42496A358003282F6 /* ObtainUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainUser.swift; sourceTree = "<group>"; };
 		D9E445E62496A386003282F6 /* ObtainCommentsOfPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainCommentsOfPhoto.swift; sourceTree = "<group>"; };
@@ -144,6 +150,7 @@
 				90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */,
 				90A5CEFB24918D5D005668A7 /* AppDelegate.swift */,
 				90A5CEFD24918D5D005668A7 /* SceneDelegate.swift */,
+				D99432F324981E7C003FC29C /* ApplicationModuleFactory.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -163,7 +170,6 @@
 			children = (
 				D9E445EB2496C2C1003282F6 /* PhotosList */,
 				90A5CF0124918D5D005668A7 /* Main.storyboard */,
-				90A5CEFF24918D5D005668A7 /* ViewController.swift */,
 			);
 			path = Stories;
 			sourceTree = "<group>";
@@ -211,6 +217,8 @@
 			isa = PBXGroup;
 			children = (
 				90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */,
+				D99432F924983053003FC29C /* Reusable.swift */,
+				D99432FB2498306B003FC29C /* UICollectionView+CellRegistration.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -219,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				D9E445E92496C1F2003282F6 /* PhotosListViewController.swift */,
+				D99432F524982344003FC29C /* PhotosListViewModel.swift */,
 				D99712742496C43E00F4170E /* PhotoCollectionViewCell.swift */,
 			);
 			path = PhotosList;
@@ -357,19 +366,22 @@
 				9066D50E24964CAE008A8A71 /* User.swift in Sources */,
 				D9E445EA2496C1F2003282F6 /* PhotosListViewController.swift in Sources */,
 				9066D50C24964B45008A8A71 /* Photo.swift in Sources */,
-				90A5CF0024918D5D005668A7 /* ViewController.swift in Sources */,
 				9066D51024965FA0008A8A71 /* Comment.swift in Sources */,
+				D99432F624982344003FC29C /* PhotosListViewModel.swift in Sources */,
 				D92B081C2496DC60000B97C3 /* LocalAPIService.swift in Sources */,
 				D99712752496C43E00F4170E /* PhotoCollectionViewCell.swift in Sources */,
+				D99432F424981E7C003FC29C /* ApplicationModuleFactory.swift in Sources */,
 				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
 				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
 				9066D50724964AE9008A8A71 /* ObtainPhotos.swift in Sources */,
+				D99432FA24983053003FC29C /* Reusable.swift in Sources */,
 				D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */,
 				90A5CEFC24918D5D005668A7 /* AppDelegate.swift in Sources */,
 				90A5CEFE24918D5D005668A7 /* SceneDelegate.swift in Sources */,
 				90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */,
 				D9E445E72496A386003282F6 /* ObtainCommentsOfPhoto.swift in Sources */,
 				906829C324962D3C0051BE94 /* ObtainAlbum.swift in Sources */,
+				D99432FC2498306B003FC29C /* UICollectionView+CellRegistration.swift in Sources */,
 				9066D50A24964B40008A8A71 /* Album.swift in Sources */,
 				90659A102496387400233C5A /* APIWorker.swift in Sources */,
 				906829C124952FEF0051BE94 /* APIService.swift in Sources */,

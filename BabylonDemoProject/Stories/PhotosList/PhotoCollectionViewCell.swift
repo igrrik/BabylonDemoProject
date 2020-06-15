@@ -10,15 +10,32 @@ import UIKit
 import Kingfisher
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var photoImageView: UIImageView?
+    private let photoImageView = UIImageView()
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        photoImageView?.clipsToBounds = true
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        configureUI()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        configureUI()
     }
 
     func configure(with model: Model) {
-        photoImageView?.kf.setImage(with: model.imageURL)
+        photoImageView.kf.setImage(with: model.imageURL)
+    }
+
+    private func configureUI() {
+        photoImageView.clipsToBounds = true
+        contentView.addSubview(photoImageView)
+        photoImageView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            photoImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
+            photoImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
+            photoImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            photoImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
 }
 
