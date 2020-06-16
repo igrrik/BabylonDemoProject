@@ -11,6 +11,7 @@ import Kingfisher
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
     private let photoImageView = UIImageView()
+    private var downloadTask: DownloadTask?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -22,11 +23,17 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
         configureUI()
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        downloadTask?.cancel()
+    }
+
     func configure(with model: Model) {
-        photoImageView.kf.setImage(with: model.imageURL)
+        downloadTask = photoImageView.kf.setImage(with: model.imageURL)
     }
 
     private func configureUI() {
+        contentView.backgroundColor = .gray
         photoImageView.clipsToBounds = true
         contentView.addSubview(photoImageView)
         photoImageView.translatesAutoresizingMaskIntoConstraints = false

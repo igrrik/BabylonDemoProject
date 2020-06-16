@@ -11,7 +11,7 @@ import Combine
 
 final class PhotosListViewController: UIViewController {
     private let viewModel: PhotosListViewModel
-    private let collectionView = UICollectionView()
+    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let loadingIndicator = UIActivityIndicatorView()
     private let collectionViewInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
     private var subscriptions = Set<AnyCancellable>()
@@ -72,11 +72,14 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
 
 private extension PhotosListViewController {
     func configureUI() {
+        title = "Photos"
+        view.backgroundColor = .white
         configureCollectionView()
         configureLoadingIndicator()
     }
 
     func configureCollectionView() {
+        collectionView.backgroundColor = .white
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(collectionView)
         NSLayoutConstraint.activate([
