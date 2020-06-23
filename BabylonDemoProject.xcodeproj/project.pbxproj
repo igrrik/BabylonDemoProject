@@ -134,8 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				9046235E2499734100D3D25E /* ImageProvider.swift */,
-				90FB91E724A2A7FF00C7D2CB /* ImageProviderPublisher.swift */,
 				90462360249974A500D3D25E /* ImageProviderWorker.swift */,
+				90FB91E724A2A7FF00C7D2CB /* ImageProviderPublisher.swift */,
 				904623622499777300D3D25E /* UIImageView+ImageProvider.swift */,
 			);
 			path = ImageProvider;

@@ -7,11 +7,11 @@
 //
 
 import UIKit
-import Kingfisher
+import Combine
 
 final class PhotoCollectionViewCell: UICollectionViewCell {
     private let photoImageView = UIImageView()
-    private var downloadTask: DownloadTask?
+    private var downloadTask: Cancellable?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,7 +29,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with model: Model) {
-        downloadTask = photoImageView.kf.setImage(with: model.imageURL)
+        downloadTask = photoImageView.setImage(with: model.imageURL)
     }
 
     private func configureUI() {

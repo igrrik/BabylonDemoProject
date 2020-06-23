@@ -10,7 +10,7 @@ import UIKit
 import Combine
 
 final class PhotoDetailViewModel {
-    var photoImage: AnyPublisher<UIImage, Never> { photoImageSubject.eraseToAnyPublisher() }
+    var photoImage: AnyPublisher<UIImage, Never> { photoImageSubject.compactMap { $0 }.eraseToAnyPublisher() }
     var photoTitle: String { photo.title }
     var authorName: AnyPublisher<String, Never> { authorNameSubject.map { "Author: \($0)" }.eraseToAnyPublisher() }
     var isLoading: AnyPublisher<Bool, Never> { isLoadingSubject.eraseToAnyPublisher() }
@@ -20,17 +20,52 @@ final class PhotoDetailViewModel {
 
     private let photo: Photo
     private let apiService: APIService
-    private let photoImageSubject = PassthroughSubject<UIImage, Never>()
+    private let imageProvider: ImageProvider
+    private let photoImageSubject = CurrentValueSubject<UIImage?, Never>(nil)
     private let authorNameSubject = CurrentValueSubject<String, Never>("")
     private let commentsCountSubject = CurrentValueSubject<Int, Never>(0)
     private let isLoadingSubject = CurrentValueSubject<Bool, Never>(false)
+    private var subscribtions = Set<AnyCancellable>()
 
-    init(apiService: APIService, photo: Photo) {
-        self.apiService = apiService
+    init(photo: Photo, apiService: APIService, imageProvider: ImageProvider) {
         self.photo = photo
+        self.apiService = apiService
+        self.imageProvider = imageProvider
     }
 
-    private func commentsString(with count: Int) -> String {
+    func loadData() {
+        loadPhoto()
+    }
+}
+
+private extension PhotoDetailViewModel {
+    func loadPhoto() {
+        let thumbnail = imageProvider
+            .obtainImage(with: photo.thumbnailUrl)
+            .createPublisher()
+            .replaceError(with: #imageLiteral(resourceName: "placeholder"))
+            .map(Optional.init)
+
+        let fullPhoto = imageProvider
+            .obtainImage(with: photo.url)
+            .createPublisher()
+            .map(Optional.init)
+            .replaceError(with: nil)
+
+        thumbnail
+            .merge(with: fullPhoto)
+            .sink { [weak self] value in
+                switch value {
+                case .some(let image):
+                    self?.photoImageSubject.send(image)
+                case .none:
+                    break
+                }
+            }
+            .store(in: &subscribtions)
+    }
+
+    func commentsString(with count: Int) -> String {
         let comment = count == 1 ? "comment" : "comments"
         return "\(count) \(comment)"
     }

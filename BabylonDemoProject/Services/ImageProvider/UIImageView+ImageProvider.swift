@@ -13,7 +13,8 @@ extension UIImageView {
     func setImage(with url: URL) -> Cancellable {
         return ImageProviderWorker.shared
             .obtainImage(with: url)
-            .sink(receiveCompletion: { _ in }, receiveValue: { [weak self] image in
+            .replaceError(with: #imageLiteral(resourceName: "placeholder"))
+            .sink(receiveValue: { [weak self] image in
                 DispatchQueue.main.async {
                     self?.image = image
                 }
