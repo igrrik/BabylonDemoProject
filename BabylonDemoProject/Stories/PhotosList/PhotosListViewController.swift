@@ -11,9 +11,10 @@ import Combine
 
 final class PhotosListViewController: UIViewController {
     private let viewModel: PhotosListViewModel
-    private let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    private let loadingIndicator = UIActivityIndicatorView()
     private let collectionViewInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
+    private let flowLayout = UICollectionViewFlowLayout()
+    private let collectionView: UICollectionView
+    private let loadingIndicator = UIActivityIndicatorView()
     private var subscriptions = Set<AnyCancellable>()
     private var dataSource = [PhotoCollectionViewCell.Model]() {
         didSet {
@@ -23,6 +24,7 @@ final class PhotosListViewController: UIViewController {
 
     init(viewModel: PhotosListViewModel) {
         self.viewModel = viewModel
+        self.collectionView = .init(frame: .zero, collectionViewLayout: flowLayout)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -88,13 +90,10 @@ private extension PhotosListViewController {
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
+        flowLayout.sectionInset = collectionViewInsets
         collectionView.registerCellOfType(PhotoCollectionViewCell.self)
         collectionView.dataSource = self
         collectionView.delegate = self
-
-        if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset = collectionViewInsets
-        }
     }
 
     func configureLoadingIndicator() {
