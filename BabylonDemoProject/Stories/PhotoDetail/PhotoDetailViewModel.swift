@@ -10,21 +10,12 @@ import UIKit
 import Combine
 
 final class PhotoDetailViewModel {
-    var photoImage: AnyPublisher<UIImage, Never> { photoImageSubject.compactMap { $0 }.eraseToAnyPublisher() }
-    var photoTitle: String { photo.title }
-    var authorName: AnyPublisher<String, Never> { authorNameSubject.map { "Author: \($0)" }.eraseToAnyPublisher() }
-    var isLoading: AnyPublisher<Bool, Never> { isLoadingSubject.eraseToAnyPublisher() }
-    var error: AnyPublisher<Error, Never> { errorSubject.eraseToAnyPublisher() }
-    var commentsCount: AnyPublisher<String, Never> {
-        commentsCountSubject.map(commentsString(with:)).eraseToAnyPublisher()
-    }
-
     private let photo: Photo
     private let apiService: APIService
     private let imageProvider: ImageProvider
     private let photoImageSubject = CurrentValueSubject<UIImage?, Never>(nil)
-    private let authorNameSubject = CurrentValueSubject<String, Never>("")
-    private let commentsCountSubject = CurrentValueSubject<Int, Never>(0)
+    private let authorNameSubject = CurrentValueSubject<String?, Never>(nil)
+    private let commentsCountSubject = CurrentValueSubject<Int?, Never>(nil)
     private let isLoadingSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = PassthroughSubject<Error, Never>()
     private var subscribtions = Set<AnyCancellable>()
@@ -36,8 +27,36 @@ final class PhotoDetailViewModel {
     }
 
     func obtainData() {
+        isLoadingSubject.send(true)
+
         obtainPhoto()
-        obtainAuthorName()
+        
+        Publishers.Zip(obtainAuthorName(), obtainComments())
+            .sink(receiveValue: { [weak self] authorName, commentsCount in
+                self?.commentsCountSubject.send(commentsCount)
+                self?.authorNameSubject.send(authorName)
+                self?.isLoadingSubject.send(false)
+            })
+            .store(in: &subscribtions)
+    }
+}
+
+extension PhotoDetailViewModel {
+    var photoImage: AnyPublisher<UIImage, Never> { photoImageSubject.compactMap { $0 }.eraseToAnyPublisher() }
+    var photoTitle: String { photo.title }
+    var isLoading: AnyPublisher<Bool, Never> { isLoadingSubject.eraseToAnyPublisher() }
+    var error: AnyPublisher<Error, Never> { errorSubject.eraseToAnyPublisher() }
+    var authorName: AnyPublisher<String, Never> {
+        authorNameSubject.compactMap { value in
+            guard let value = value else {
+                return nil
+            }
+            return "Author: \(value)"
+        }
+        .eraseToAnyPublisher()
+    }
+    var commentsCount: AnyPublisher<String, Never> {
+        commentsCountSubject.compactMap(commentsString(with:)).eraseToAnyPublisher()
     }
 }
 
@@ -68,8 +87,8 @@ private extension PhotoDetailViewModel {
             .store(in: &subscribtions)
     }
 
-    func obtainAuthorName() {
-        apiService
+    func obtainAuthorName() -> AnyPublisher<String, Never> {
+        return apiService
             .send(request: ObtainAlbum(albumId: photo.albumId))
             .createPublisher()
             .map(\.userId)
@@ -83,18 +102,36 @@ private extension PhotoDetailViewModel {
                     .eraseToAnyPublisher()
             }
             .map(\.username)
-            .sink(receiveCompletion: { [weak self] completion in
-                guard case let .failure(error) = completion else {
-                    return
-                }
-                self?.errorSubject.send(error)
-            }, receiveValue: { [weak self] userName in
-                self?.authorNameSubject.send(userName)
+            .handleEvents(receiveCompletion: { [weak self] completion in
+                self?.process(completion)
             })
-            .store(in: &subscribtions)
+            .replaceError(with: "–")
+            .eraseToAnyPublisher()
     }
 
-    func commentsString(with count: Int) -> String {
+    func obtainComments() -> AnyPublisher<Int, Never>{
+        return apiService
+            .send(request: ObtainCommentsOfPhoto(photoId: photo.id))
+            .createPublisher()
+            .handleEvents(receiveCompletion: { [weak self] completion in
+                self?.process(completion)
+            })
+            .map(\.count)
+            .replaceError(with: 0)
+            .eraseToAnyPublisher()
+    }
+
+    func process(_ completion: Subscribers.Completion<Error>) {
+        guard case let .failure(error) = completion else {
+            return
+        }
+        errorSubject.send(error)
+    }
+
+    func commentsString(with count: Int?) -> String? {
+        guard let count = count else {
+            return nil
+        }
         let comment = count == 1 ? "comment" : "comments"
         return "\(count) \(comment)"
     }
