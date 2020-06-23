@@ -14,6 +14,7 @@ final class PhotoDetailViewModel {
     var photoTitle: String { photo.title }
     var authorName: AnyPublisher<String, Never> { authorNameSubject.map { "Author: \($0)" }.eraseToAnyPublisher() }
     var isLoading: AnyPublisher<Bool, Never> { isLoadingSubject.eraseToAnyPublisher() }
+    var error: AnyPublisher<Error, Never> { errorSubject.eraseToAnyPublisher() }
     var commentsCount: AnyPublisher<String, Never> {
         commentsCountSubject.map(commentsString(with:)).eraseToAnyPublisher()
     }
@@ -25,6 +26,7 @@ final class PhotoDetailViewModel {
     private let authorNameSubject = CurrentValueSubject<String, Never>("")
     private let commentsCountSubject = CurrentValueSubject<Int, Never>(0)
     private let isLoadingSubject = CurrentValueSubject<Bool, Never>(false)
+    private let errorSubject = PassthroughSubject<Error, Never>()
     private var subscribtions = Set<AnyCancellable>()
 
     init(photo: Photo, apiService: APIService, imageProvider: ImageProvider) {
@@ -33,13 +35,14 @@ final class PhotoDetailViewModel {
         self.imageProvider = imageProvider
     }
 
-    func loadData() {
-        loadPhoto()
+    func obtainData() {
+        obtainPhoto()
+        obtainAuthorName()
     }
 }
 
 private extension PhotoDetailViewModel {
-    func loadPhoto() {
+    func obtainPhoto() {
         let thumbnail = imageProvider
             .obtainImage(with: photo.thumbnailUrl)
             .createPublisher()
@@ -62,6 +65,32 @@ private extension PhotoDetailViewModel {
                     break
                 }
             }
+            .store(in: &subscribtions)
+    }
+
+    func obtainAuthorName() {
+        apiService
+            .send(request: ObtainAlbum(albumId: photo.albumId))
+            .createPublisher()
+            .map(\.userId)
+            .flatMap { [weak self] userId -> AnyPublisher<User, Error> in
+                guard let self = self else {
+                    return Fail<User, Error>(error: ObjectDeallocatedError()).eraseToAnyPublisher()
+                }
+                return self.apiService
+                    .send(request: ObtainUser(userId: userId))
+                    .createPublisher()
+                    .eraseToAnyPublisher()
+            }
+            .map(\.username)
+            .sink(receiveCompletion: { [weak self] completion in
+                guard case let .failure(error) = completion else {
+                    return
+                }
+                self?.errorSubject.send(error)
+            }, receiveValue: { [weak self] userName in
+                self?.authorNameSubject.send(userName)
+            })
             .store(in: &subscribtions)
     }
 
