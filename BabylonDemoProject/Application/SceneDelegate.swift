@@ -11,7 +11,7 @@ import UIKit
 
 final class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
-    private let appModuleFactory = ApplicationModuleFactory()
+    private let appModuleFactory = ApplicationModulesFactory()
 
     func scene(
         _ scene: UIScene,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Photo {
+struct Photo: Identifiable {
     let id: Int
     let albumId: Int
     let title: String

@@ -9,12 +9,13 @@
 import UIKit
 import Combine
 
-final class PhotosListViewController: UIViewController {
+final class PhotosListViewController: UIViewController, ErrorPresentable {
     private let viewModel: PhotosListViewModel
     private let collectionViewInsets = UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
     private let flowLayout = UICollectionViewFlowLayout()
     private let collectionView: UICollectionView
-    private let loadingIndicator = UIActivityIndicatorView()
+    private let loadingIndicator = LoadingIndicatorView()
+    private let appModulesFactory: ApplicationModulesFactory
     private var subscriptions = Set<AnyCancellable>()
     private var dataSource = [PhotoCollectionViewCell.Model]() {
         didSet {
@@ -22,8 +23,9 @@ final class PhotosListViewController: UIViewController {
         }
     }
 
-    init(viewModel: PhotosListViewModel) {
+    init(viewModel: PhotosListViewModel, appModulesFactory: ApplicationModulesFactory) {
         self.viewModel = viewModel
+        self.appModulesFactory = appModulesFactory
         self.collectionView = .init(frame: .zero, collectionViewLayout: flowLayout)
         super.init(nibName: nil, bundle: nil)
     }
@@ -70,6 +72,12 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
 
         return CGSize(width: widthPerItem, height: widthPerItem)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = dataSource[indexPath.item].photo
+        showDetail(with: photo)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
 }
 
 private extension PhotosListViewController {
@@ -114,30 +122,17 @@ private extension PhotosListViewController {
             .store(in: &subscriptions)
 
         viewModel.isLoading
-            .sink(receiveValue: { [weak self] isLoading in
-                if isLoading {
-                    self?.loadingIndicator.startAnimating()
-                } else {
-                    self?.loadingIndicator.stopAnimating()
-                }
-            })
+            .assign(to: \.isVisible, on: loadingIndicator)
             .store(in: &subscriptions)
 
         viewModel.photos
-            .map { $0.map(\.thumbnailUrl) }
-            .map { $0.map(PhotoCollectionViewCell.Model.init(imageURL:)) }
+            .map { $0.map(PhotoCollectionViewCell.Model.init(photo:)) }
             .assign(to: \.dataSource, on: self)
             .store(in: &subscriptions)
     }
 
-    func show(_ error: Error) {
-        let alert = UIAlertController(
-            title: "Error",
-            message: error.localizedDescription,
-            preferredStyle: .alert
-        )
-        let okAction = UIAlertAction(title: "OK", style: .default)
-        alert.addAction(okAction)
-        present(alert, animated: true)
+    func showDetail(with photo: Photo) {
+        let viewController = appModulesFactory.makePhotoDetailModule(photo: photo)
+        showDetailViewController(viewController, sender: self)
     }
 }

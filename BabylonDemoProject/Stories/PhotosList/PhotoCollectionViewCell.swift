@@ -29,7 +29,7 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
     }
 
     func configure(with model: Model) {
-        downloadTask = photoImageView.setImage(with: model.imageURL)
+        downloadTask = photoImageView.setImage(with: model.photo.thumbnailUrl)
     }
 
     private func configureUI() {
@@ -48,6 +48,6 @@ final class PhotoCollectionViewCell: UICollectionViewCell {
 
 extension PhotoCollectionViewCell {
     struct Model {
-        let imageURL: URL
+        let photo: Photo
     }
 }

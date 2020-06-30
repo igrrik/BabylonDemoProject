@@ -30,7 +30,7 @@ final class PhotoDetailViewModel {
         isLoadingSubject.send(true)
 
         obtainPhoto()
-        
+
         Publishers.Zip(obtainAuthorName(), obtainComments())
             .sink(receiveValue: { [weak self] authorName, commentsCount in
                 self?.commentsCountSubject.send(commentsCount)
@@ -109,7 +109,7 @@ private extension PhotoDetailViewModel {
             .eraseToAnyPublisher()
     }
 
-    func obtainComments() -> AnyPublisher<Int, Never>{
+    func obtainComments() -> AnyPublisher<Int, Never> {
         return apiService
             .send(request: ObtainCommentsOfPhoto(photoId: photo.id))
             .createPublisher()
