@@ -80,6 +80,13 @@ extension PhotosListViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension PhotosListViewController: UICollectionViewDataSourcePrefetching {
+    func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
+        let photos = indexPaths.map { dataSource[$0.item].photo }
+        viewModel.prefetch(photos)
+    }
+}
+
 private extension PhotosListViewController {
     func configureUI() {
         title = "Photos"
@@ -101,6 +108,7 @@ private extension PhotosListViewController {
         flowLayout.sectionInset = collectionViewInsets
         collectionView.registerCellOfType(PhotoCollectionViewCell.self)
         collectionView.dataSource = self
+        collectionView.prefetchDataSource = self
         collectionView.delegate = self
     }
 

@@ -18,7 +18,7 @@ final class ApplicationModulesFactory {
     }
 
     func makePhotosListModule() -> UIViewController {
-        let viewModel = PhotosListViewModel(apiService: apiService)
+        let viewModel = PhotosListViewModel(apiService: apiService, imageProvider: imageProvider)
         let viewController = PhotosListViewController(viewModel: viewModel, appModulesFactory: self)
         return UINavigationController(rootViewController: viewController)
     }

@@ -18,12 +18,16 @@ final class ImageProviderWorker: ImageProvider {
         self.kingfisher = kingfisher
     }
 
-    func obtainImage(with url: URL) -> Deferred<ImageProviderPublisher> {
+    func obtainImage(with url: URL) -> Deferred<ImagePublisher> {
         return Deferred { [weak self] in
             guard let self = self else {
-                return ImageProviderPublisher(configuration: .failure(ObjectDeallocatedError()))
+                return ImagePublisher(configuration: .failure(ObjectDeallocatedError()))
             }
-            return ImageProviderPublisher(configuration: .url(url, self.kingfisher))
+            return ImagePublisher(configuration: .url(url, self.kingfisher))
         }
+    }
+
+    func prefetchImages(with urls: [URL]) {
+        ImagePrefetcher(urls: urls, options: [.downloader(kingfisher.downloader)]).start()
     }
 }

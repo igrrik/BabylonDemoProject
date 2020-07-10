@@ -28,7 +28,7 @@
 		90A5CF0824918D5E005668A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A5CF0624918D5E005668A7 /* LaunchScreen.storyboard */; };
 		90A5CF1324918D5E005668A7 /* BabylonDemoProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */; };
 		90DD5E7524963A0D00696200 /* ObjectDeallocatedError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */; };
-		90FB91E824A2A7FF00C7D2CB /* ImageProviderPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB91E724A2A7FF00C7D2CB /* ImageProviderPublisher.swift */; };
+		90FB91E824A2A7FF00C7D2CB /* ImagePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB91E724A2A7FF00C7D2CB /* ImagePublisher.swift */; };
 		90FB91EA24ABF35000C7D2CB /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB91E924ABF35000C7D2CB /* ErrorPresentable.swift */; };
 		90FB91EC24ABF49200C7D2CB /* LoadingIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90FB91EB24ABF49200C7D2CB /* LoadingIndicatorView.swift */; };
 		D92B081C2496DC60000B97C3 /* LocalAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92B081B2496DC60000B97C3 /* LocalAPIService.swift */; };
@@ -80,7 +80,7 @@
 		90A5CF1224918D5E005668A7 /* BabylonDemoProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BabylonDemoProjectTests.swift; sourceTree = "<group>"; };
 		90A5CF1424918D5E005668A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90DD5E7424963A0D00696200 /* ObjectDeallocatedError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectDeallocatedError.swift; sourceTree = "<group>"; };
-		90FB91E724A2A7FF00C7D2CB /* ImageProviderPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProviderPublisher.swift; sourceTree = "<group>"; };
+		90FB91E724A2A7FF00C7D2CB /* ImagePublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePublisher.swift; sourceTree = "<group>"; };
 		90FB91E924ABF35000C7D2CB /* ErrorPresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorPresentable.swift; sourceTree = "<group>"; };
 		90FB91EB24ABF49200C7D2CB /* LoadingIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorView.swift; sourceTree = "<group>"; };
 		D92B081B2496DC60000B97C3 /* LocalAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalAPIService.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 			children = (
 				9046235E2499734100D3D25E /* ImageProvider.swift */,
 				90462360249974A500D3D25E /* ImageProviderWorker.swift */,
-				90FB91E724A2A7FF00C7D2CB /* ImageProviderPublisher.swift */,
+				90FB91E724A2A7FF00C7D2CB /* ImagePublisher.swift */,
 				904623622499777300D3D25E /* UIImageView+ImageProvider.swift */,
 			);
 			path = ImageProvider;
@@ -418,7 +418,7 @@
 				D99432F424981E7C003FC29C /* ApplicationModulesFactory.swift in Sources */,
 				90659A0E2496385A00233C5A /* APIRequest.swift in Sources */,
 				90659A0C2496384600233C5A /* APIEndpoint.swift in Sources */,
-				90FB91E824A2A7FF00C7D2CB /* ImageProviderPublisher.swift in Sources */,
+				90FB91E824A2A7FF00C7D2CB /* ImagePublisher.swift in Sources */,
 				9066D50724964AE9008A8A71 /* ObtainPhotos.swift in Sources */,
 				D99432FA24983053003FC29C /* Reusable.swift in Sources */,
 				D9E445E52496A358003282F6 /* ObtainUser.swift in Sources */,

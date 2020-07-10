@@ -11,5 +11,6 @@ import Combine
 
 protocol ImageProvider {
 
-    func obtainImage(with url: URL) -> Deferred<ImageProviderPublisher>
+    func obtainImage(with url: URL) -> Deferred<ImagePublisher>
+    func prefetchImages(with urls: [URL])
 }

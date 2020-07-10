@@ -1,5 +1,5 @@
 //
-//  ImageProviderPublisher.swift
+//  ImagePublisher.swift
 //  BabylonDemoProject
 //
 //  Created by Igor Kokoev on 24.06.2020.
@@ -10,7 +10,7 @@ import UIKit
 import Combine
 import Kingfisher
 
-struct ImageProviderPublisher: Publisher {
+struct ImagePublisher: Publisher {
     typealias Output = UIImage
     typealias Failure = Error
 
@@ -22,7 +22,7 @@ struct ImageProviderPublisher: Publisher {
     }
 }
 
-extension ImageProviderPublisher {
+extension ImagePublisher {
     enum Configuration {
         case failure(Error)
         case url(URL, KingfisherManager)
@@ -31,11 +31,11 @@ extension ImageProviderPublisher {
 
 private final class ImageProviderSubscription<S: Subscriber>: Subscription
 where S.Input == UIImage, S.Failure == Error {
-    private let configuration: ImageProviderPublisher.Configuration
+    private let configuration: ImagePublisher.Configuration
     private var subscriber: S?
     private var downloadTask: DownloadTask?
 
-    init(subscriber: S, configuration: ImageProviderPublisher.Configuration) {
+    init(subscriber: S, configuration: ImagePublisher.Configuration) {
         self.subscriber = subscriber
         self.configuration = configuration
     }

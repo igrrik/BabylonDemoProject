@@ -18,10 +18,12 @@ final class PhotosListViewModel {
     private let isLoadingSubject = CurrentValueSubject<Bool, Never>(false)
     private let errorSubject = PassthroughSubject<Error, Never>()
     private let apiService: APIService
+    private let imageProvider: ImageProvider
     private var subscriptions = Set<AnyCancellable>()
 
-    init(apiService: APIService) {
+    init(apiService: APIService, imageProvider: ImageProvider) {
         self.apiService = apiService
+        self.imageProvider = imageProvider
     }
 
     func loadPhotos() {
@@ -38,5 +40,9 @@ final class PhotosListViewModel {
                 self?.photosSubject.send(photos)
             })
             .store(in: &subscriptions)
+    }
+
+    func prefetch(_ photos: [Photo]) {
+        imageProvider.prefetchImages(with: photos.map { $0.thumbnailUrl })
     }
 }
