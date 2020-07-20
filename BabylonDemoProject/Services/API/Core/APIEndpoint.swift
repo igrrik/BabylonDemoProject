@@ -24,7 +24,7 @@ enum APIEndpoint {
         case .photos:
             path = "photos"
         case .commentsOfPhoto(let identifier):
-            path = "photos/\(identifier)/comments"
+            path = "posts/\(identifier)/comments"
         case .album(let identifier):
             path = "albums/\(identifier)"
         case .user(let identifier):

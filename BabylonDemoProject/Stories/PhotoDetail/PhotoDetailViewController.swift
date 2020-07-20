@@ -95,7 +95,7 @@ private extension PhotoDetailViewController {
     func configureLabels() {
         titleLabel.numberOfLines = 0
         titleLabel.textColor = .darkText
-        titleLabel.font = UIFont.preferredFont(forTextStyle: .largeTitle)
+        titleLabel.font = UIFont.preferredFont(forTextStyle: .headline)
 
         authorLabel.font = UIFont.preferredFont(forTextStyle: .caption1)
         authorLabel.textColor = .secondaryLabel
@@ -105,7 +105,7 @@ private extension PhotoDetailViewController {
 
         [titleLabel, authorLabel, commentsLabel].forEach { labelsStackView.addArrangedSubview($0) }
         labelsStackView.axis = .vertical
-        labelsStackView.spacing = spacing
+        labelsStackView.spacing = (spacing / 2).rounded()
         labelsStackView.translatesAutoresizingMaskIntoConstraints = false
 
         view.addSubview(labelsStackView)
